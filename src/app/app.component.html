@@ -1,1 +1,15 @@
-<app-news-field></app-news-field>
+<div class="container">        
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link " aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/users">Users</a>
+        </li>
+      </ul>
+    <div class="row">
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </div> 
+</div>
