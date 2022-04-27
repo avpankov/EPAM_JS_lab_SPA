@@ -1,6 +1,0 @@
-<h2>Users page</h2>
-<hr>
-<app-add-user-form (onAddUser) = "addUser($event)"></app-add-user-form>
-<hr>
-<app-user class="list-group-item list-group-item-action list-group-item-primary" *ngFor="let user of users"
-    [userData]="user"></app-user>

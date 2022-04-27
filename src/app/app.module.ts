@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsersComponent } from './users/users.component';
-import { UserComponent } from './user/user.component';
-import { FormsModule } from '@angular/forms';
-import { AddUserFormComponent } from './add-user-form/add-user-form.component';
-import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users-page/users/users.component';
+import { UserComponent } from './users-page/user/user.component';
+import { AddUserFormComponent } from './users-page/add-user-form/add-user-form.component';
+import { WeatherComponent } from './weather-page/weather/weather.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UsersFilterPipe } from './users-page/users/users-filter.pipe';
 
-const appRoutes: Routes =[
-  { path: 'users', component: UsersComponent},
-  { path: '', component: HomeComponent},
-];
 
 @NgModule({
   declarations: [
@@ -22,14 +18,15 @@ const appRoutes: Routes =[
     UsersComponent,
     UserComponent,
     AddUserFormComponent,
-    AboutComponent,
-    HomeComponent
+    WeatherComponent,
+    UsersFilterPipe,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
