@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { DynamicComponent } from './dynamic/dynamic.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-project';
+
+  @ViewChild('dynamic', { read: ViewContainerRef })
+  private viewRef!: ViewContainerRef;
+
+  showDynamicComponent() {
+    this.viewRef.clear();
+    this.viewRef.createComponent(DynamicComponent);
+  }
 }

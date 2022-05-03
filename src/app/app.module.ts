@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,8 @@ import { AddUserFormComponent } from './users-page/add-user-form/add-user-form.c
 import { WeatherComponent } from './weather-page/weather/weather.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersFilterPipe } from './users-page/users/users-filter.pipe';
+import { DynamicComponent } from './dynamic/dynamic.component';
+import { ClockComponent } from './clock/clock.component';
 
 
 @NgModule({
@@ -20,13 +22,16 @@ import { UsersFilterPipe } from './users-page/users/users-filter.pipe';
     AddUserFormComponent,
     WeatherComponent,
     UsersFilterPipe,
+    DynamicComponent,
+    ClockComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
