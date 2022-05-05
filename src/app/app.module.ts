@@ -12,6 +12,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersFilterPipe } from './users-page/users/users-filter.pipe';
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { ClockComponent } from './clock/clock.component';
+import { StepperComponent } from './cdk-page/stepper/stepper.component';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { CdkPageComponent } from './cdk-page/cdk-page/cdk-page.component';
+import { AccordionComponent } from './cdk-page/accordion/accordion.component';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
+import { TreeComponent } from './cdk-page/tree/tree.component';
 
 
 @NgModule({
@@ -24,14 +30,19 @@ import { ClockComponent } from './clock/clock.component';
     UsersFilterPipe,
     DynamicComponent,
     ClockComponent,
-    
+    StepperComponent,
+    CdkPageComponent,
+    AccordionComponent,
+    TreeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CdkStepperModule,
+    CdkAccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

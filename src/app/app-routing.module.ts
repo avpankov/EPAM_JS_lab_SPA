@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CdkPageComponent } from './cdk-page/cdk-page/cdk-page.component';
 import { HomeComponent } from './home-page/home.component';
 import { UsersComponent } from './users-page/users/users.component';
 import { WeatherComponent } from './weather-page/weather/weather.component';
@@ -7,7 +8,8 @@ import { WeatherComponent } from './weather-page/weather/weather.component';
 const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'weather', component: WeatherComponent },
-  { path: '', component: HomeComponent },];
+  { path: '', component: HomeComponent },
+  { path: 'cdk', component: CdkPageComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
