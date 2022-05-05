@@ -17,7 +17,12 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CdkPageComponent } from './cdk-page/cdk-page/cdk-page.component';
 import { AccordionComponent } from './cdk-page/accordion/accordion.component';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
-import { TreeComponent } from './cdk-page/tree/tree.component';
+import { TableComponent } from './cdk-page/table/table.component';
+import {CdkTableModule} from '@angular/cdk/table';
+import { DragAndDropComponent } from './cdk-page/drag-and-drop/drag-and-drop.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { VirtualScrollComponent } from './cdk-page/virtual-scroll/virtual-scroll.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -33,7 +38,9 @@ import { TreeComponent } from './cdk-page/tree/tree.component';
     StepperComponent,
     CdkPageComponent,
     AccordionComponent,
-    TreeComponent
+    TableComponent,
+    DragAndDropComponent,
+    VirtualScrollComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,10 @@ import { TreeComponent } from './cdk-page/tree/tree.component';
     HttpClientModule,
     ReactiveFormsModule,
     CdkStepperModule,
-    CdkAccordionModule
+    CdkAccordionModule,
+    CdkTableModule,
+    DragDropModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

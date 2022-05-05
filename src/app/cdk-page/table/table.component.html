@@ -1,0 +1,25 @@
+<table cdk-table [dataSource]="dataSource">
+    
+    <ng-container cdkColumnDef="position">
+      <th cdk-header-cell *cdkHeaderCellDef> No. </th>
+      <td cdk-cell *cdkCellDef="let user"> {{user.position}} </td>
+    </ng-container>
+  
+    <ng-container cdkColumnDef="name">
+      <th cdk-header-cell *cdkHeaderCellDef> Name </th>
+      <td cdk-cell *cdkCellDef="let user"> {{user.name}} </td>
+    </ng-container>
+  
+    <ng-container cdkColumnDef="age">
+      <th cdk-header-cell *cdkHeaderCellDef> Age </th>
+      <td cdk-cell *cdkCellDef="let user"> {{user.age}} </td>
+    </ng-container>
+  
+    <ng-container cdkColumnDef="gender">
+      <th cdk-header-cell *cdkHeaderCellDef> Gender </th>
+      <td cdk-cell *cdkCellDef="let user"> {{user.gender}} </td>
+    </ng-container>
+  
+    <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
