@@ -23,6 +23,15 @@ import { DragAndDropComponent } from './cdk-page/drag-and-drop/drag-and-drop.com
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { VirtualScrollComponent } from './cdk-page/virtual-scroll/virtual-scroll.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { MatPageComponent } from './material-page/mat-page/mat-page.component';
+import { MatTableComponent } from './material-page/mat-table/mat-table.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -40,7 +49,9 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     AccordionComponent,
     TableComponent,
     DragAndDropComponent,
-    VirtualScrollComponent
+    VirtualScrollComponent,
+    MatPageComponent,
+    MatTableComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +63,13 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     CdkAccordionModule,
     CdkTableModule,
     DragDropModule,
-    ScrollingModule
+    ScrollingModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatNativeDateModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
