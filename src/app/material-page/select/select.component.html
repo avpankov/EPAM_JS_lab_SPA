@@ -1,0 +1,9 @@
+<h4>Select component</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Favorite car</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let car of cars" [value]="car.value">
+      {{car.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
