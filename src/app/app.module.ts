@@ -41,6 +41,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { SelectComponent } from './material-page/select/select.component';
 import { MatSelectModule } from '@angular/material/select';
 import { TooltipComponent } from './material-page/tooltip/tooltip.component';
+import { UserPageComponent } from './users-page/user-page/user-page.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { TooltipComponent } from './material-page/tooltip/tooltip.component';
     MatStepperComponent,
     DatepickerComponent,
     SelectComponent,
-    TooltipComponent
+    TooltipComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,

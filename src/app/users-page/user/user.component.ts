@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,6 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class UserComponent {
 
-  @Input('userData') user!: { name: string; surname: string; };
+  @Input('userData') user!: { id: number; name: string; surname: string; };
+
+  constructor() {}
 
 }

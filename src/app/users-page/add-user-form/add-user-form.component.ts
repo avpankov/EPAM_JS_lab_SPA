@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-user-form',
@@ -7,12 +7,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class AddUserFormComponent {
 
+  userId = 0;
   userName = '';
   userSurname = '';
-  @Output () onAddUser = new EventEmitter<{ name: string; surname: string; }>()
+  @Output() onAddUser = new EventEmitter<{ id: number; name: string; surname: string; }>();
+  @Input('userData') user!: { id: number; name: string; surname: string; };
 
   addUser() {
     this.onAddUser.emit({
+      id: this.userId,
       name: this.userName,
       surname: this.userSurname
     })
