@@ -1,4 +1,1 @@
-<div class="flexbox">
-    <div><b>User:</b> {{user.name}} {{user.surname}}</div>
-    <div><a class="btn btn-primary" [routerLink]="['/users', user.id, user.name, user.surname]">Info</a></div>
-</div>
+    <div><a [routerLink]="['/users', user.id, user.name, user.surname]"><b>User:</b> {{user.name}} {{user.surname}}</a></div>
