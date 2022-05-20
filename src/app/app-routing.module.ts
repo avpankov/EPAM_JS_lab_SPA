@@ -8,7 +8,7 @@ import { UserPageComponent } from './users-page/user-page/user-page.component';
 import { WeatherComponent } from './weather-page/weather/weather.component';
 
 const routes: Routes = [
-  { path: 'users/:id/:name/:surname', component: UserPageComponent },
+  { path: 'users/:id', component: UserPageComponent },
   { path: 'users', component: UsersComponent },
   { path: 'weather', component: WeatherComponent },
   { path: '', component: HomeComponent },

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { users } from '../users';
 
 @Component({
   selector: 'app-user-page',
@@ -8,20 +9,14 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class UserPageComponent implements OnInit {
 
-  @Input('userData') user!: { id: number; name: string; surname: string; };
-  
-  id!: number;
-  name!: string;
-  surname!: string;
+  user: { id: number; name: string; surname: string; } | undefined;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      this.id = +params['id'];
-      this.name = params['name'];
-      this.surname = params['surname'];
-    })
+    const routeParams = this.route.snapshot.paramMap;
+    const userIdFromRoute = Number(routeParams.get('id'));
+    this.user = users.find(user => user.id === userIdFromRoute);
   }
 
   backToUsers() {
