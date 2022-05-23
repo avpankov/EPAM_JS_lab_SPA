@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="text-center">
+        <h5>Current weather and forecast in your city...</h5>
+        <div class="col-md-6 offset-md-3">
+        <div class="input-group mb-3" style="margin: 20px 0">
+            <input type="text" class="form-control" placeholder="Enter city name" #input>
+            <button class="btn btn-primary" type="button" (click)="getCity(input.value)">Search</button>
+          </div>
+        </div>
+        <h2 style="margin: 30px 0 20px">Weather in {{weather.city.name}}, {{weather.city.country}}</h2>
+        {{weather.list[0].dt * 1000 | date: 'dd.MM.YYYY'}}
+        <div>
+            <div>
+                <img src="http://openweathermap.org/img/wn/{{weather.list[0].weather[0].icon}}@2x.png" alt="icon">
+                <span style="font-size: large">{{weather.list[0].main.temp}} &#8451;</span>
+                <p>{{weather.list[0].weather[0].description | uppercase}}</p>
+            </div>
+        </div>
+        <div class="col-md-6 offset-md-3">
+        <table class="table table-hover table-striped">
+            <tbody>
+                <tr>
+                    <td>Humidity</td>
+                    <td>{{weather.list[0].main.humidity}} %</td>
+                </tr>
+                <tr>
+                    <td>Pressure</td>
+                    <td>{{weather.list[0].main.pressure}} hPa</td>
+                </tr>
+                <tr>
+                    <td>Wind</td>
+                    <td>{{weather.list[0].wind.speed}} m/s</td>
+                </tr>
+                <tr>
+                    <td>Sunrise</td>
+                    <td>{{weather.city.sunrise * 1000 | date: 'HH:mm'}}</td>
+                </tr>
+                <tr>
+                    <td>Sunset</td>
+                    <td>{{weather.city.sunset * 1000 | date: 'HH:mm'}}</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div>
+            <h3 style="margin: 50px 0 30px">Weather for the next three days</h3>
+            <div class="row align-items-center">
+                <div class="col">
+                    
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>{{weather.list[5].dt * 1000 | date: 'dd.MM.YYYY'}}</p>
+                                    <img src="http://openweathermap.org/img/wn/{{weather.list[5].weather[0].icon}}@2x.png" alt="icon">
+                                    <span style="font-size: large">{{weather.list[5].main.temp}} &#8451;</span>
+                                    <p>{{weather.list[5].weather[0].description | uppercase}}</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>{{weather.list[13].dt * 1000 | date: 'dd.MM.YYYY'}}</p>
+                                    <img src="http://openweathermap.org/img/wn/{{weather.list[13].weather[0].icon}}@2x.png" alt="icon">
+                                    <span style="font-size: large">{{weather.list[13].main.temp}} &#8451;</span>
+                                    <p>{{weather.list[13].weather[0].description | uppercase}}</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>{{weather.list[21].dt * 1000 | date: 'dd.MM.YYYY'}}</p>
+                                    <img src="http://openweathermap.org/img/wn/{{weather.list[21].weather[0].icon}}@2x.png" alt="icon">
+                                    <span style="font-size: large">{{weather.list[21].main.temp}} &#8451;</span>
+                                    <p>{{weather.list[21].weather[0].description | uppercase}}</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>

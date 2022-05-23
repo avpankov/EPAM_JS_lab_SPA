@@ -1,0 +1,20 @@
+<form class="input-group mb-3" style="align-items: baseline;" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" class="form-control input-group mb-3" placeholder="Email" formControlName="email" [ngClass]="{
+        'is-invalid': form.get('email')?.invalid && form.get('email')?.touched,
+        'is-valid': form.get('email')?.valid && form.get('email')?.touched}">
+    <input type="password" class="form-control input-group mb-3" placeholder="Password" formControlName="pass"
+        [ngClass]="{
+        'is-invalid': form.get('pass')?.invalid && form.get('pass')?.touched,
+        'is-valid': form.get('pass')?.valid && form.get('pass')?.touched}">
+    <p class="access-error">
+        <span *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Incorrect email! </span>
+        <span *ngIf="form.get('pass')?.errors?.['required'] && form.get('pass')?.touched">Password shouldn't be empty!
+        </span>
+        <span *ngIf="form.get('pass')?.errors?.['lengthError'] && form.get('pass')?.touched">Password too short!</span>
+    </p>
+    <button class="btn btn-outline-secondary" type="submit" id="button-addon1" (click)="logIn()"
+        [disabled]="form.invalid">Enter</button>
+
+</form>
+<h4 *ngIf="isLoggedIn">You are logged in!</h4>
+<hr>

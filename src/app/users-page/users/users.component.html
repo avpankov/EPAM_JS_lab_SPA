@@ -1,0 +1,16 @@
+<h2>Users page</h2>
+<hr>
+<app-add-user-form (onAddUser)="addUser($event)"></app-add-user-form>
+<hr>
+<div style="display: flex; justify-content: space-between; align-items: baseline;">
+    <input type="text" id="filter" class="form-control" style="margin-bottom: 15px;"
+        placeholder="Filter by {{defaultType}}" [(ngModel)]="searchUser">
+    <span *ngFor="let filterType of filterTypes">
+
+        <label for="">
+            <input type="radio" [value]="filterType.type" [(ngModel)]="defaultType"> {{filterType.text}}
+        </label>
+    </span>
+</div>
+<app-user class="list-group-item list-group-item-action"
+    *ngFor="let user of users | usersFilter:searchUser:defaultType" [userData]="user"></app-user>
